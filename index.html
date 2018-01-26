@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css?family=Assistant:400,700,800" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <title>Graff pink</title>
+
+    <link rel="stylesheet" href="assets/style/style.css"/>
+</head>
+<body>
+	<header>
+		<nav>
+			<div class="logo">
+				<span>Graff</span>
+				<span style="color: #b73958;">pink</span>
+			</div>
+			<div class="nav_cont">
+				<a href="#">Home</a>
+				<a href="#">About Us</a>
+				<a href="#">Services</a>
+				<a href="#">Contact</a>
+				<button>Login</button>
+			</div>
+		</nav>
+		<div id="banner_image">
+			<h1>Welcome to Pink</h1>
+			<p>A multi purpose theme from cssauthor.com</p>
+		</div>
+		
+	</header>
+	<main>
+		<h2>Lorem Ipsum is simply dummy </h2>
+		<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown</p>
+		<div class="services">
+			<button>
+				<figure class="tickets">
+					<img src="assets/img/tickets.png" alt="">
+					<figcapture>Tickets</figcapture>
+				</figure>
+			</button>
+			<figure class="camera">
+				<img src="assets/img/camera.png" alt="">
+				<figcapture>Camera</figcapture>
+			</figure>
+			<figure class="beer">
+				<img src="assets/img/beer.png" alt="">
+				<figcapture>Beer</figcapture>
+			</figure>
+			<figure class="devices">
+				<img src="assets/img/ipad.png" alt="">
+				<figcapture>Devices</figcapture>
+			</figure>
+		</div>
+	</main>
+	<section class="albums">
+		<div class="album"></div>
+	</section>
+
+	<div id="popup">
+		<p>popup</p>
+	</div>
+	
+
+	<script>
+		var button = document.querySelector('.services button');
+		button.addEventListener('click', function(e){
+			var popup = document.querySelector('#popup');
+			popup.classList.add('show');
+		})
+	</script>
+</body>
+</html>

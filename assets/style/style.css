@@ -1,0 +1,105 @@
+@font-face {
+	font-family: "Univers";
+	src: url("../fonts/Univers-Light.otf");
+}
+@font-face {
+	font-family: "SegoeUI";
+	src: url("../fonts/SegoeUIRegular.ttf");
+}
+@font-face {
+	font-family: "Lavanderia";
+	src: url("../fonts/Lavanderia-Regular.otf");
+}
+@font-face {
+	font-family: "Alte-Haas-Grotesk";
+	src: url("../fonts/alte-haas-grotesk.bold.ttf");
+}
+a {
+	color: inherit;
+	text-decoration: none;
+}
+html, body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Univers', "Times New Roman", sans-serif;
+    font-size: 16px;
+}
+header {
+    background: url(../img/banner-bg.png);
+    background-size: cover;
+    padding-bottom: 10rem;
+}
+header > nav {
+    display: flex;
+    justify-content: space-around;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.11);
+    background-color: #ffffff;
+    opacity: 0.9;
+    padding: 1.25rem 0;
+    align-items: center;
+}
+header > nav > .logo {
+	font-family: "Lavanderia";
+	font-size: 2.56rem;
+}
+header > nav > .nav_cont > a {
+	font-family: "SegoeUI";
+	color: #454545;
+    padding-right: 41px;
+    font-size: 1.06rem;
+}
+header > nav > .nav_cont > button {
+    font-family: "SegoeUI";
+    background-color: #de6d6e;
+    color: #454545;
+    font-size: 1.06rem;
+    padding: .5rem 1rem;
+    border: none;
+}
+header > h1 {
+    font-family: "Alte-Haas-Grotesk";
+    color: #ffffff;
+    font-size: 69px;
+    text-shadow: 0 0 13px rgba(0, 0, 0, 0.22);
+    text-align: center;
+    margin: 0;
+    padding-top: 20rem;
+}
+header > p {
+    font-family: "Univers";
+    color: #ffffff;
+    font-size: 25px;
+	text-shadow: 0 0 13px rgba(0, 0, 0, 0.22);
+    margin: 0;
+    text-align: center;
+}
+main {
+	text-align: center;
+}
+main > .services {
+	display: flex;
+}
+main > .services button {
+	border: none;
+    background: none;
+}
+main > .services figure {
+    width: 11.2rem;
+    height: 11.2rem;
+    border-radius: 50%;
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+main > .services figure > img {
+    padding-bottom: 0.8rem;
+}
+
+#popup {
+	display: none;
+}
+#popup.show {
+	display: block;
+} 
