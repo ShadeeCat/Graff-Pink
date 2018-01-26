@@ -56,7 +56,7 @@ header > nav > .nav_cont > button {
     padding: .5rem 1rem;
     border: none;
 }
-header > h1 {
+header h1 {
     font-family: "Alte-Haas-Grotesk";
     color: #ffffff;
     font-size: 69px;
@@ -65,7 +65,7 @@ header > h1 {
     margin: 0;
     padding-top: 20rem;
 }
-header > p {
+header p {
     font-family: "Univers";
     color: #ffffff;
     font-size: 25px;
@@ -78,6 +78,7 @@ main {
 }
 main > .services {
 	display: flex;
+    justify-content: center;
 }
 main > .services button {
 	border: none;
@@ -97,9 +98,35 @@ main > .services figure > img {
     padding-bottom: 0.8rem;
 }
 
-#popup {
+section.albums > .album {
+    display: flex;
+    margin: 2rem auto;
+    max-width: 950px;
+}
+section.albums > .album > .content {
+	max-width: 700px;
+	margin-left: 1rem;
+	display: flex;
+	align-items: center;
+}
+section.albums > .album > .content > h3 {
+	color: #404040;
+	font-size: 27px;
+	font-weight: 300;
+	margin: 0;
+}
+section.albums > .album > .content > p {
+	color: #8b8b8b;
+	font-size: 15px;
+	font-weight: 300;
+	line-height: 22px;
+}
+
+form[name=popup] {
 	display: none;
 }
-#popup.show {
+form[name=popup].show {
 	display: block;
-} 
+}
+form[name=popup] fieldset {border: none;}
+form[name=popup] > label {display: block;}
