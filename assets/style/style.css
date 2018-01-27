@@ -1,6 +1,7 @@
 @font-face {
 	font-family: "Univers";
 	src: url("../fonts/Univers-Light.otf");
+    font-weight: 300;
 }
 @font-face {
 	font-family: "SegoeUI";
@@ -25,7 +26,7 @@ html, body {
     font-size: 16px;
 }
 header {
-    background: url(../img/banner-bg.png);
+    background: url(../img/banner-bg.png) 50% 52%;
     background-size: cover;
     padding-bottom: 10rem;
 }
@@ -55,6 +56,34 @@ header > nav > .nav_cont > button {
     font-size: 1.06rem;
     padding: .5rem 1rem;
     border: none;
+    cursor: pointer;
+}
+header > #banner_image {
+    position: relative;
+}
+header > #banner_image > .circle {
+    border-radius: 50%;
+    background-color: #fff;
+    opacity: 0.59;
+    position: absolute;
+}
+header > #banner_image > .circle.little {
+    width: 71px;
+    height: 71px;
+    right: 48%;
+    top: 53%;
+}
+header > #banner_image > .circle.medium {
+    width: 92px;
+    height: 92px;
+    right: 48.5%;
+    top: 40%;
+}
+header > #banner_image > .circle.big {
+    right: 50%;
+    top: 47%;
+    width: 117px;
+    height: 117px;
 }
 header h1 {
     font-family: "Alte-Haas-Grotesk";
@@ -75,58 +104,169 @@ header p {
 }
 main {
 	text-align: center;
+    padding: 0 1rem;
+}
+main > h2 {
+    color: #404040;
+    font-size: 35px;
+}
+main > p {
+    color: #636363;
+    font-size: 17px;
+    max-width: 700px;
+    margin: 2rem auto;
 }
 main > .services {
-	display: flex;
-    justify-content: center;
+    display: flex;
+    max-width: 1100px;
+    margin: auto;
 }
 main > .services button {
-	border: none;
+    border: none;
     background: none;
+    padding: 0;
+    margin: auto;
 }
 main > .services figure {
     width: 11.2rem;
     height: 11.2rem;
     border-radius: 50%;
-    background-color: red;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin: auto;
+    transition: opacity 0.5s ease-out;
 }
-main > .services figure > img {
-    padding-bottom: 0.8rem;
+main > .services figure:hover {
+    opacity: 0.2;
 }
-
+main > .services figure.tickets {background-color: #4eb9f4;}
+main > .services figure.camera {background-color: #6fc125;}
+main > .services figure.beer {background-color: #ff5649;}
+main > .services figure.devices {background-color: #e48f23;}
+main > .services figure > figcapture {
+    font-size: 17px;
+    color: #fff;
+}
+main > .services figure > img {padding-bottom: 0.8rem;}
+main > .services figure.beer > img{padding-left: 1rem;}
+section.albums {
+    max-height: 590px;
+    overflow-y: scroll;
+}
 section.albums > .album {
     display: flex;
     margin: 2rem auto;
     max-width: 950px;
 }
+section.albums > .album:hover {
+    background: linear-gradient(white, gray);
+
+}
 section.albums > .album > .content {
-	max-width: 700px;
-	margin-left: 1rem;
-	display: flex;
-	align-items: center;
+    max-width: 700px;
+    margin-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    text-align: start;
 }
 section.albums > .album > .content > h3 {
 	color: #404040;
 	font-size: 27px;
-	font-weight: 300;
 	margin: 0;
 }
 section.albums > .album > .content > p {
 	color: #8b8b8b;
 	font-size: 15px;
-	font-weight: 300;
 	line-height: 22px;
 }
-
+footer {
+    background: url(../img/footer-bg.png);
+    display: flex;
+    color: #8b8b8b;
+    font-size: 15px;
+    line-height: 22px;
+    justify-content: center;
+    padding: 0 1rem;
+}
+footer > .sub_menu {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+}
+footer > .sub_menu > h4 {
+    color: #aeaeae;
+    font-size: 21px;
+    line-height: 22px;
+    font-weight: normal;
+}
+.hidden {
+    display: none;
+    position: fixed;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+}
 form[name=popup] {
 	display: none;
 }
 form[name=popup].show {
-	display: block;
+    display: block;
+    text-align: start;
+    margin: 1rem auto;
+    background-color: #fff;
+    padding: 1rem 3rem 1rem 1rem;
+    z-index: 2;
+    position: fixed;
+    top: 50%;
+    right: 42%;
 }
 form[name=popup] fieldset {border: none;}
+form[name=popup] fieldset > legend {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
 form[name=popup] > label {display: block;}
+form[name=popup] > label > input[type=number] {
+    width: 70px;
+    height: 1.2rem;
+    border-radius: 5px;
+    padding: 0.3rem;
+    border: 1.4px solid gainsboro;
+
+}
+form[name=popup] > label > select {
+    height: 2rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 0.3rem;
+    padding: 0.3rem;
+    background-color: gainsboro;
+}
+form[name=popup] > input {
+    margin-top: 1rem;
+    width: 5rem;
+    height: 2rem;
+    font-size: 1rem;
+    border-radius: 0.3rem;
+    border: none;
+}
+@media only screen and (max-width: 1200px) {
+    main > .services figure {
+        width: 10rem;
+        height: 10rem;
+    }
+    main > .services figure figcapture {
+        display: none;
+    }
+}
+@media only screen and (max-width: 1000px) {
+    main > .services figure {
+        width: 9rem;
+        height: 9rem;
+    }
+}

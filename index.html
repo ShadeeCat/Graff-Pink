@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="assets/style/style.css"/>
 </head>
 <body>
+	<div class="hidden"></div>
 	<header>
 		<nav>
 			<div class="logo">
@@ -29,10 +30,12 @@
 			</div>
 		</nav>
 		<div id="banner_image">
+			<span class="circle little"></span>
+			<span class="circle medium"></span>
+			<span class="circle big"></span>
 			<h1>Welcome to Pink</h1>
 			<p>A multi purpose theme from cssauthor.com</p>
 		</div>
-
 	</header>
 	<main>
 		<h2>Lorem Ipsum is simply dummy </h2>
@@ -57,10 +60,7 @@
 				<figcapture>Devices</figcapture>
 			</figure>
 		</div>
-	</main>
-	<section class="albums"></section>
-
-	<form name="popup">
+			<form name="popup">
 		<fieldset>
 			<legend>Please select a search option:</legend>
 		    <label id="album_id">
@@ -74,101 +74,68 @@
 		</fieldset>
 	    <label id="album_id_field">
 	    	<select name="album_id_select">
-				<option value="1" selected>One</option>
-				<option value="2" >Two</option>
-				<option value="3" >Three</option>
-				<option value="4" >Four</option>
-				<option value="5" >Five</option>
-				<option value="6" >Six</option>
-				<option value="7" >Seven</option>
-				<option value="8" >Eight</option>
-				<option value="9" >Nine</option>
-				<option value="10">Ten</option>
+	    		<option selected disabled hidden>Choose Album Number</option>
+				<option value="1"="">Album number 1</option>
+				<option value="2" >Album number 2</option>
+				<option value="3" >Album number 3</option>
+				<option value="4" >Album number 4</option>
+				<option value="5" >Album number 5</option>
+				<option value="6" >Album number 6</option>
+				<option value="7" >Album number 7</option>
+				<option value="8" >Album number 8</option>
+				<option value="9" >Album number 9</option>
+				<option value="10">Album number 10</option>
 	    	</select>
 	    </label>
 	    <label id="photo_id_field" style="display: none">
-	    	<input type="number" name="photo_id_input">
+	    	<input type="number" name="photo_id_input" placeholder="0">
 	    </label>
 		<input type="submit" value="Submit">
 	</form>
-
-	<script>
-		var baseUrl = 'https://jsonplaceholder.typicode.com/photos';
-		buildPhotosList(baseUrl);
-
-		var popup = document.forms['popup'];
-		var openPopupBtn = document.querySelector('.services button');
-		openPopupBtn.addEventListener('click', function(e){
-			popup.classList.add('show');
-		})
-
-		// album_id or photo_id change
-		var radios = popup.querySelectorAll('[name=user_choice]');
-		for (var i = 0; i < radios.length; i++) {
-			radios[i].addEventListener('change', function (event) {
-				console.log(event.target.value)
-				popup.querySelector('#album_id_field').style.display = 'none';
-				popup.querySelector('#photo_id_field').style.display = 'none';
-				popup.querySelector('#' + event.target.value + '_field').style.display = 'block';
-			})
-		}
-
-		// popup submit and build list of items according to the [name=user_choice]
-		popup.addEventListener('submit', function (event) {
-			event.preventDefault();
-			if (popup.querySelector('#photo_id_field').style.display !== 'none') {
-				var url = baseUrl + '/' + popup.querySelector('[name=photo_id_input]').value;
-			} else if (popup.querySelector('#album_id_field').style.display !== 'none') {
-				var url = baseUrl + '?album_id=' + popup.querySelector('[name=album_id_select]').value;
-			} else {console.log('nothing')}
-			buildPhotosList(url)
-			popup.classList.remove('show');
-		})
-
-		function buildPhotosList(url) {
-			fetch(url)
-			.then(function(response) {
-				return response.json();
-			})
-			.then(function (data) {
-				var albums = document.querySelector('.albums');
-				albums.innerHTML = '';
-
-				var itemLength = Math.min(data.length, 20);
-				for (var i = 0; i < itemLength; i++) {
-					albums.append(createItem(data[i]));
-				}
-
-			})
-			.catch(function (e) {console.error(e)})
-		}
-
-		function createItem (obj) {
-			var container = document.createElement('section');
-			container.classList.add('album');
-
-			var thumbnail = document.createElement('img');
-			thumbnail.src = obj.thumbnailUrl;
-			thumbnail.alt = obj.title;
-			thumbnail.title = obj.title;
-			container.append(thumbnail);
-
-			var content = document.createElement('div');
-			content.classList.add('content');
-			container.append(content);
-
-			var title = document.createElement('h3')
-			title.textContent = obj.title;
-			content.append(title)
-
-			var link = document.createElement('a');
-			link.href = obj.url;
-			link.textContent = obj.url;
-			content.append(link)
-
-			return container;
-		}
-
-	</script>
+		<section class="albums"></section>
+	</main>
+	<footer>
+		<nav class="sub_menu">
+			<h4>SubMenu</h4>
+			<a href="#">Android</a>
+			<a href="#">Apps</a>
+			<a href="#">Articles</a>
+			<a href="#">Backgrounds</a>
+			<a href="#">Blogger</a>
+			<a href="#">Books</a>
+			<a href="#">Coding</a>
+		</nav>
+		<nav class="sub_menu">
+			<h4>SubMenu</h4>
+			<a href="#">Freebies</a>
+			<a href="#">Greetings</a>
+			<a href="#">Icons</a>
+			<a href="#">Illustrator</a>
+			<a href="#">Inspirations</a>
+			<a href="#">iPad</a>
+			<a href="#">iPhone</a>
+		</nav>
+		<nav class="sub_menu">
+			<h4>SubMenu</h4>
+			<a href="#">Drupal</a>
+			<a href="#">Fonts</a>
+			<a href="#">Freebies</a>
+			<a href="#">Greetings</a>
+			<a href="#">Icons</a>
+			<a href="#">Illustrator</a>
+			<a href="#">Inspiration</a>
+		</nav>
+		<nav class="sub_menu">
+			<h4>SubMenu</h4>
+			<a href="#">JQuery</a>
+			<a href="#">Magento</a>
+			<a href="#">Mobile</a>
+			<a href="#">Photoshop</a>
+			<a href="#">Plugins</a>
+			<a href="#">Resourse</a>
+			<a href="#">Templates</a>
+		</nav>
+	</footer>
+	<script type="text/javascript" src="assets/js/script.js"></script>
 </body>
 </html>
